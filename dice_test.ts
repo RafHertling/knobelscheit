@@ -1,5 +1,5 @@
 import { assertEquals, assert } from "@std/assert";
-import { Dice, rollDice, diceSum } from "./dice.ts";
+import { Dice } from "./dice.ts";
 
 Deno.test("rollDice returns number between 1 and 6", () => {
     const dice = new Dice();
@@ -20,6 +20,7 @@ Deno.test("diceSum returns correct number", () => {
 Deno.test("diceSum returns number between 1 and 12", () => {
     const dice = new Dice();
 
-    assertEquals(dice.diceSum(7, 7), false);
-    assertEquals(dice.diceSum(5, 2), true);
+    assertEquals(dice.checkSumoverflow(14), false);
+    assertEquals(dice.checkSumoverflow(1), false);
+    assertEquals(dice.checkSumoverflow(7), true);
 });
