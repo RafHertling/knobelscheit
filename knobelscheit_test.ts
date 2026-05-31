@@ -15,9 +15,9 @@ Deno.test("New Game: no number is flipped", () => {
 
 Deno.test("Is move valid, number gets flipped", () => {
     const game = new Knobelscheit();
-    assert(game.isMoveValid([9]), true);
-    assert(game.isMoveValid([0]), false);
-    assert(game.isMoveValid([10]), false);
+    assertEquals(game.isMoveValid([9]), true);
+    assertEquals(game.isMoveValid([0]), false);
+    assertEquals(game.isMoveValid([10]), false);
 });
 
 Deno.test("flip: correct move, numbers flip", () => {
